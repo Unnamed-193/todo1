@@ -1,0 +1,90 @@
+#root {
+  width: 25%;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 25px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  border: 2px solid #9BB8CD;
+}
+
+.inputTask {
+  width: 80%;
+
+  background-color: transparent;
+  color: white;
+  
+  outline: none;
+  border: none;
+  
+  transition: 0.2s;
+  line-height: 30px;
+  font-size: 20px;
+
+  transition: .2s;
+  border-bottom: 1px solid transparent;
+}
+
+.inputTask:focus {
+  line-height: 30px;
+  font-size: 25px;
+  border-bottom: 1px solid #9BB8CD;
+
+}
+
+.inputTask::placeholder {
+  color: white;
+  opacity: .6;
+}
+
+.createTask {
+  border: none;
+  outline: none;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  background-image: url('./assets/Add.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  color: #000000;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+.createTask:active {
+  filter: saturate(390%);
+}
+
+.createTask:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+
+@media screen and (max-width: 1366px) {
+  #root {
+      width: 60%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #root {
+      width: 70%;
+  }
+
+  .item {
+      font-size: 14px;
+  }
+}
