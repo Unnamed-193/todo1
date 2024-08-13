@@ -6,6 +6,18 @@
   align-items: center;
 }
 
+.links {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 34px;
+}
+
+.links a {
+  color: #fff;
+  border: 1px solid #ffffff;
+  padding: 10px;
+}
+
 .form {
   display: flex;
   justify-content: space-between;
@@ -14,7 +26,7 @@
   padding: 20px 25px;
   margin-bottom: 5px;
   border-radius: 10px;
-  border: 2px solid #9BB8CD;
+  border: 2px solid #9bb8cd;
 }
 
 .inputTask {
@@ -22,28 +34,27 @@
 
   background-color: transparent;
   color: white;
-  
+
   outline: none;
   border: none;
-  
+
   transition: 0.2s;
   line-height: 30px;
   font-size: 20px;
 
-  transition: .2s;
+  transition: 0.2s;
   border-bottom: 1px solid transparent;
 }
 
 .inputTask:focus {
   line-height: 30px;
   font-size: 25px;
-  border-bottom: 1px solid #9BB8CD;
-
+  border-bottom: 1px solid #9bb8cd;
 }
 
 .inputTask::placeholder {
   color: white;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .createTask {
@@ -70,21 +81,21 @@
 
 .createTask:hover {
   cursor: pointer;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 @media screen and (max-width: 1366px) {
   #root {
-      width: 60%;
+    width: 60%;
   }
 }
 
 @media screen and (max-width: 768px) {
   #root {
-      width: 70%;
+    width: 70%;
   }
 
   .item {
-      font-size: 14px;
+    font-size: 14px;
   }
 }

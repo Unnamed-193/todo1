@@ -27,7 +27,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "FiraSans", sans-serif;
+  font-family: 'FiraSans', sans-serif;
 }
 
 h1 {

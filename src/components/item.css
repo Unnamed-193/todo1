@@ -4,13 +4,13 @@
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  
-  border: 2px solid #9BB8CD;
+
+  border: 2px solid #9bb8cd;
   width: 100%;
   padding: 20px 25px;
   margin-bottom: 10px;
   border-radius: 10px;
-  
+
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
@@ -56,16 +56,16 @@
   resize: none;
 }
 .item__text:focus {
-  border-bottom: 1px solid #9BB8CD;
+  border-bottom: 1px solid #9bb8cd;
 }
 
 .item__text::selection {
-  background-color: #EEC759;
+  background-color: #eec759;
 }
 
 .item__delete {
   border: 0;
-  background-color: rgba(0,0,0,.0);
+  background-color: rgba(0, 0, 0, 0);
   background-image: url('../assets/Delete.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -75,7 +75,7 @@
 }
 .item__delete:hover {
   cursor: pointer;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 .item__delete:active {
@@ -90,6 +90,6 @@
   background-color: green; /* Change to any shade of green you prefer */
 }
 
-.done{
+.done {
   padding: 15px;
 }

@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react';
-import { DealApi } from '../App';
-import './item.css'
+import { DealApi } from '../pages/MainPage';
+import './item.css';
+import API_URL from '../api';
 interface ItemProps {
   deal: DealApi;
+  index: number;
   onDelete: (id: string) => void;
 }
 
-function Item({ deal, onDelete }: ItemProps) {
+function Item({ deal, index, onDelete }: ItemProps) {
   const [isActive, setIsActive] = useState(false);
-  const [value, setValue] = useState<string>('')
+  const [value, setValue] = useState<string>('');
 
   // Handler for clicking the item
   const handleClick = async () => {
@@ -16,7 +18,7 @@ function Item({ deal, onDelete }: ItemProps) {
     setIsActive(updatedActiveStatus); // Toggle the state
 
     try {
-      const res = await fetch(`https://6384b6a12c0a4af9.mokky.dev/items/${deal.id}`, {
+      const res = await fetch(`${API_URL}/${deal.id}`, {
         method: 'PATCH', // Assuming your API support updating deals with PUT
         headers: {
           'Content-Type': 'application/json',
@@ -39,7 +41,7 @@ function Item({ deal, onDelete }: ItemProps) {
     setValue(newValue); // Update local state
 
     try {
-      const res = await fetch(`https://6384b6a12c0a4af9.mokky.dev/items/${deal.id}`, {
+      const res = await fetch(`${API_URL}/${deal.id}`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -59,19 +61,18 @@ function Item({ deal, onDelete }: ItemProps) {
 
   useEffect(() => {
     setIsActive(deal.isActive);
-    setValue(deal.deal)
+    setValue(deal.deal);
   }, [deal]);
-
 
   return (
     <li className={`item ${isActive ? 'item--active' : ''}`}>
       <div className='text'>
-        <strong className='item__id'>{deal.id}</strong>
-        <textarea className='item__text' value={value} onChange={handleInputChange}   />
+        <strong className='item__id'>{index + 1}</strong>
+        <textarea className='item__text' value={value} onChange={handleInputChange} />
       </div>
       <div className='btns'>
         <button className='done' onClick={handleClick}>
-        {isActive ? 'Undone' : 'Done'}
+          {isActive ? 'Undone' : 'Done'}
         </button>
         <button className='item__delete' onClick={() => onDelete(deal.id.toString())}></button>
       </div>
