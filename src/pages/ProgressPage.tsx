@@ -31,14 +31,17 @@ function ProgressPage() {
 
   async function deleteTask(dealId: string) {
     try {
-      const res = await fetch(`${API_URL}/${dealId}`, {
-        method: 'DELETE',
-      });
-      if (!res.ok) {
-        throw new Error('Network response was not ok');
-      }
+      if (confirm('Точно хочешь удалить?')) {
+        const res = await fetch(`${API_URL}/${dealId}`, {
+          method: 'DELETE',
+        });
+        if (!res.ok) {
+          throw new Error('Network response was not ok');
+        }
 
-      setDeals((prevDeals) => prevDeals.filter((deal) => deal.id !== Number(dealId)));
+        setDeals((prevDeals) => prevDeals.filter((deal) => deal.id !== Number(dealId)));
+      }
+      return
     } catch (error) {
       console.error('Error deleting deal:', error);
     }
