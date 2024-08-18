@@ -77,7 +77,7 @@ button:focus-visible {
 }
 
 .active-link {
-  background-color: #fafafa !important;
+  background-color: #dfd7d7 !important;
   color: #000 !important;
   font-weight: bold; /* Можно добавить жирный шрифт для активной ссылки */
 }
