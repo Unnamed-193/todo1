@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import List from '../components/List';
+import { NavLink } from 'react-router-dom';
 import API_URL from '../api';
-import { Link } from 'react-router-dom';
+import List from '../components/List';
 export interface DealApi {
   deal: string;
   id: number;
@@ -75,10 +75,20 @@ function MainPage() {
   }
   return (
     <>
-      <h1>Todo List</h1>
+      <h1 className='title' >Todo List</h1>
       <div className='links'>
-        <Link to='/'>in progress</Link>
-        <Link to='/progress'>is done</Link>
+      <NavLink 
+          to='/' 
+          className={({ isActive }) => (isActive ? 'active-link' : 'link')}
+        >
+          in progress
+        </NavLink>
+        <NavLink 
+          to='/progress' 
+          className={({ isActive }) => (isActive ? 'active-link' : 'link')} 
+        >
+          is done
+        </NavLink>
       </div>
       <div className='form'>
         <input
@@ -93,7 +103,7 @@ function MainPage() {
       {deals?.some((deal) => !deal.isActive) ? (
         <List deals={deals.filter((deal) => !deal.isActive)} onDelete={deleteTask} />
       ) : (
-        <h1>Список пуст :(</h1>
+        <h1  className='empty'>Список пуст :(</h1>
       )}
     </>
   );
